@@ -16,3 +16,4 @@ class Solution(object):
 # 1. enumerate is NOT tricky, all it does is allow us to get both an index and a value for each item in nums
 # 2. We are checking for the difference in our dictionary, but when adding to the dictionary we ARE ADDING THE VALUE FROM NUMS (NOT myDict[diff] = i)
 # 3. in line 8, we are returning myDict[diff] and i NOT myDict[diff] and myDict[i], this is because myDict[i] does not correspond to the index we found the answer at. 
+# 4. In line 9, assuming we are at index 0 and the first value is 2, we want our dict to look like 2 : 0, we are not doing myDict[diff] = i, then we would have 7 : 1 which isn't what we want. 
