@@ -20,3 +20,31 @@ class Solution(object):
         return True
 
 
+# ^^ this solution is "cheating" since it uses built-in functions
+# the solution below is the neetcode solution and is optimized, in terms of memory
+
+class Solution(object):
+    def isPalindrome(self, s):
+
+        l, r = 0, len(s) - 1
+
+        while l < r:
+            #Ensure both characters being compared are alphaNum
+            while l < r and not self.alphaNum(s[l]):
+                l += 1
+            while r > l and not self.alphaNum(s[r]):
+                r -= 1
+            #If the characters aren't equal, after ensuring they are both lowercase return False
+            if s[l].lower() != s[r].lower():
+                return False
+            l += 1
+            r -= 1
+        
+        return True
+            
+        
+    
+    def alphaNum(self, c):
+        return (ord('A') <= ord(c) <= ord('Z') or
+        ord('a') <= ord(c) <= ord('z') or
+        ord('0') <= ord(c) <= ord('9'))
