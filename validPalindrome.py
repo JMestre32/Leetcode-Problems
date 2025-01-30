@@ -48,3 +48,16 @@ class Solution(object):
         return (ord('A') <= ord(c) <= ord('Z') or
         ord('a') <= ord(c) <= ord('z') or
         ord('0') <= ord(c) <= ord('9'))
+    
+
+# Topics:
+
+# Two pointer
+# ASCII values
+
+# Conceptual Answer:
+
+# You want to create a function that filters out non alphanumeric characters at each step using the ord function. 
+# Once that is made, use a two-pointer approach to compare each character from left to right (incrementing/decrementing respectively).
+# If the characters aren't the same, return False it isn't a palindrome. If you reach the end, meaning the left pointer has a greater value than the right
+# return True. 
